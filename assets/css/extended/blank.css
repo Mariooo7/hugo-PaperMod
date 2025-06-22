@@ -3,3 +3,10 @@ This is just a placeholder blank stylesheet so as to support adding custom style
 
 Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-css-with-themes-assets for more info
 */
+/* --- 为 homeInfoParams 头像添加的自定义样式 --- */
+.home-info-avatar {
+    width: 200px;
+    height: 200px;
+    margin:0 0 10px;
+    display: block; 
+}

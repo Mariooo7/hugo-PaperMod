@@ -1,6 +1,17 @@
 {{- with site.Params.homeInfoParams }}
 <article class="first-entry home-info">
     <header class="entry-header">
+        {{- with .Avatar }}
+            {{- $img := resources.Get . }}
+            {{- if $img }}
+                <img
+                    class="home-info-avatar"  src="{{ $img.Permalink }}"
+                    alt="Avatar"
+                    width="150"
+                    height="150"
+                />
+            {{- end }}
+        {{- end }}
         <h1>{{ .Title | markdownify }}</h1>
     </header>
     <div class="entry-content">
