@@ -1,0 +1,144 @@
+/* assets/css/extended/custom.css */
+
+/* --- 封面图片样式控制 --- */
+
+/* 用于文章列表页的封面缩略图 */
+/* 1. 设置封面图容器的高度和背景 */
+.post-entry .entry-cover {
+    height: 360px;
+    background-color: var(--tertiary); /* 为留白区域设置一个淡淡的背景色 */
+    border-radius: 10px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* 调整阴影的颜色和强度 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 2. 让图片完整显示并保持其原始比例 */
+.post-entry .entry-cover img {
+    width: auto;   /* 宽度自动，以保持比例 */
+    height: 100%;  /* 高度填满容器 */
+    object-fit: contain;
+}
+
+/* 用于文章内页顶部的封面大图 */
+.post-single .entry-cover {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.post-single .entry-cover img {
+    width: 100%;
+    height: auto;
+}
+
+/* 博客正文排版优化 */
+.post-content {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #2c2c2c;
+}
+
+/* 高亮代码的边框和滚动条美化 */
+pre {
+  overflow-x: auto;
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1.25rem;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 目录 TOC 美化 */
+.toc {
+  background-color: #f8f9fa;
+  border-left: 3px solid #adb5bd;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  overflow-y: auto;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+.toc a {
+  display: block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+.toc a.active {
+  background-color: rgba(26, 188, 156, 0.15);
+  font-weight: bold;
+}
+
+
+/* 增加导航栏区隔与 hover 效果 */
+nav ul li a {
+  padding: 1.0rem 0.3rem;
+  border-radius: 10px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav ul li a:hover {
+  background-color: rgba(100, 100, 100, 0.1);
+  color: #717175;
+}
+
+@media (min-width: 1024px) {
+  .toc {
+    position: fixed;
+    top:250px;
+    right: 3rem;
+    width: 400px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-left: 3px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.0rem;
+    z-index: 999;
+  }
+
+  .main {
+    margin-right: 450px; /* 给正文内容腾出空间 */
+  }
+}
+/* 将 Mermaid 图表居中 */
+.mermaid {
+    /* 让这个 div 成为 flex 容器 */
+    display: flex;
+    /* 将其唯一的子元素 (SVG 图表) 水平居中 */
+    justify-content: center;
+    margin: 2em 0;
+}
+
+/* 设置图表的最大宽度，使其具有响应性 */
+.mermaid {
+    max-width: 800px;
+    width: 100%;
+}
+
+/* --- Mermaid 浅色模式自定义样式 --- */
+.mermaid .node rect {
+    fill: #ECEFF4;
+    stroke: #5E81AC;
+    stroke-width: 2px;
+}
+.mermaid .node .label {
+    fill: #2E3440;
+    font-weight: bold;
+}
+
+/* --- Mermaid 深色模式自定义样式 --- */
+body.dark .mermaid .node rect {
+    fill: #3B4252;
+    stroke: #88C0D0;
+}
+body.dark .mermaid .node .label {
+    fill: #E5E9F0;
+}
