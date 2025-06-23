@@ -17,8 +17,8 @@
 
 /* 2. 让图片完整显示并保持其原始比例 */
 .post-entry .entry-cover img {
-    width: auto;   /* 宽度自动，以保持比例 */
-    height: 100%;  /* 高度填满容器 */
+    max-width: 100%;  /* 宽度最大为容器宽度 */
+    max-height: 100%; /* 高度最大为容器高度 */
     object-fit: contain;
 }
 
@@ -33,15 +33,15 @@
 }
 
 .post-single .entry-cover img {
-    width: 100%;
-    height: auto;
+    max-width: 100%;  /* 宽度最大为容器宽度 */
+    max-height: 100%; /* 高度最大为容器高度 */
+    object-fit: contain;
 }
 
 /* 博客正文排版优化 */
 .post-content {
   font-size: 1.15rem;
   line-height: 1.8;
-  color: #2c2c2c;
 }
 
 /* 高亮代码的边框和滚动条美化 */
@@ -54,26 +54,11 @@ pre {
 }
 
 /* 目录 TOC 美化 */
-.toc {
-  background-color: #f8f9fa;
-  border-left: 3px solid #adb5bd;
-  padding: 1rem;
-  font-size: 1.1rem;
-  border-radius: 6px;
-  overflow-y: auto;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
-}
 .toc a {
   display: block;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
+  padding: 0.25rem 0.25rem;
   transition: background-color 0.2s;
 }
-.toc a.active {
-  background-color: rgba(26, 188, 156, 0.15);
-  font-weight: bold;
-}
-
 
 /* 增加导航栏区隔与 hover 效果 */
 nav ul li a {
@@ -90,24 +75,23 @@ nav ul li a:hover {
 @media (min-width: 1024px) {
   .toc {
     position: fixed;
-    top:250px;
+    top:180px;
     right: 3rem;
-    width: 400px;
+    width: 450px;
     max-height: calc(100vh - 120px);
     overflow-y: auto;
     padding: 1rem;
-    background-color: #f8f9fa;
     border-left: 3px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-    font-size: 1.0rem;
-    z-index: 999;
+    font-size: 0.85em;
   }
 
   .main {
-    margin-right: 450px; /* 给正文内容腾出空间 */
+    margin-right: 550px; /* 给正文内容腾出空间 */
   }
 }
+
 /* 将 Mermaid 图表居中 */
 .mermaid {
     /* 让这个 div 成为 flex 容器 */
